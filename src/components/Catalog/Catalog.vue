@@ -11,7 +11,7 @@
 import FilmsList from '@/components/Catalog/FilmsList.vue'
 import Pagination from '@/components/Catalog/Pagination.vue'
 export default {
-    name: 'Catalig',
+    name: 'Catalog',
     components: {
         FilmsList,
         Pagination
