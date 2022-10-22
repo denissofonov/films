@@ -7,7 +7,7 @@
             :title='film.title'
             :rating='film.rating'
             :img='film.large_cover_image'
-            btnText='Добавить'
+            :btnText='buttonValue(film.id)'
             @buttonClick='setFavoriteFilm'
         />
     </div>
@@ -30,6 +30,12 @@ export default {
             if(!this.$store.state.favoriteFilms.favoriteFilmsIds.includes(id)) {
                 this.$store.commit('favoriteFilms/SET_FAVORITE_FILM_ID', id)
             }
+        },
+        buttonValue(id) {
+            if(this.$store.state.favoriteFilms.favoriteFilmsIds.includes(id)) {
+                return 'Добавлено'
+            }
+            return 'Добавить'
         }
     }
 }
