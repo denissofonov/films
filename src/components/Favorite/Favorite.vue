@@ -1,12 +1,12 @@
 <template>
     <div class="film">
-        <Film 
-            v-for='i in allFavoriteFilms' 
-            :key='i.id' 
+        <Film
+            v-for='i in allFavoriteFilms'
+            :key='i.id'
             :id='i.id'
             :title='i.title'
             :img='i.large_cover_image'
-            btnText='Удалить'
+            btnText='Удалить кино'
             @buttonClick='deleteFavoriteFilm'
         />
     </div>
