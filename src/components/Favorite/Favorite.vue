@@ -6,7 +6,7 @@
             :id='i.id'
             :title='i.title'
             :img='i.large_cover_image'
-            btnText='Удалить'
+            btnText='Удолить'
             @buttonClick='deleteFavoriteFilm'
         />
     </div>
