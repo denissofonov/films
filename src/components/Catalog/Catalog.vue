@@ -7,6 +7,7 @@
         <div class='loading' v-if='$store.state.films.loading'>Loading</div>
         <div class='error' v-else-if='$store.state.films.error'>Error</div>
         <FilmsList v-else/>
+        <PaginationEl/>
         <Pagination />
     </div>
 </template>
@@ -14,12 +15,14 @@
 <script>
 import FilmsList from '@/components/Catalog/FilmsList.vue'
 import Pagination from '@/components/Catalog/Pagination.vue'
+import PaginationEl from '@/components/Catalog/PaginationEl.vue'
 export default {
     name: 'Catalog',
     components: {
-        FilmsList,
-        Pagination
-    },
+    FilmsList,
+    Pagination,
+    PaginationEl
+},
     data() {
         return {
             error: false,
