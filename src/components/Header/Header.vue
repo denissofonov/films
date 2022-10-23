@@ -1,5 +1,7 @@
 <template>
-    <Nav />
+    <div class='header'>
+        <Nav />
+    </div>
 </template>
 
 <script>
@@ -14,5 +16,9 @@ export default {
 </script>
 
 <style>
-
+.header {
+    width: 90%;
+    margin: 0 auto;
+    background-color: transparent;
+}
 </style>

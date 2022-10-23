@@ -1,8 +1,9 @@
 <template>
-    <div>
-        <router-link to='/'>Главная</router-link>
-        <router-link to='/catalog'>Каталог</router-link>
-        <router-link to='/favorite'>Избранное</router-link>
+    <div class='buttons'>
+        <router-link class='button' to='/'>Home</router-link>
+        <router-link class='button' to='/catalog'>Catalog</router-link>
+        <router-link class='button' to='/favorite'>Favorites</router-link>
+        <el-button plain>Plain</el-button>
     </div>
 </template>
 
@@ -13,5 +14,15 @@ export default {
 </script>
 
 <style>
+.buttons {
+    padding: 15px;
+    margin: 0 auto;
+    width: 200px;
+    gap: 20px;
+    display: flex;
+}
+.button {
+    color: aliceblue;
+}
 
 </style>

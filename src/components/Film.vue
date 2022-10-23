@@ -2,9 +2,13 @@
     <div class='film'>   
         <img class='img' :src='img' alt=''>
         <div class='information'>
-            <div>{{ title }}</div>
-            <div>Рейтинг {{ rating }}</div>
-            <button @click='buttonClick(id)'>{{ btnText }}</button>
+            <div class='title'>{{ title }}</div>
+            <div class='genres'>Genres: {{ genres }}</div>
+            <div class='year'>Year: {{ year }}</div>
+            <div class='rating'>Rating: {{ rating }}</div>
+            <div class='button'>
+                <button class='btn' @click='buttonClick(id)'>{{ btnText }}</button>
+            </div>
         </div>
     </div>
 </template>
@@ -13,8 +17,10 @@ export default {
     name: 'Film',
     props: {
         title: String,
+        genres: String,
         rating: Number,
         img: String,
+        year: Number,
         id: Number,
         btnText: String
     },
@@ -25,15 +31,5 @@ export default {
     }
 }
 </script>
-<style>
-.film {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: rgb(89, 89, 89);
-    border-radius: 10px;
-    grid-gap: 10px;
-}
-.img {
-    border-radius: 10px;
-}
+<style scoped>
 </style>

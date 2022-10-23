@@ -6,7 +6,7 @@
             :id='i.id'
             :title='i.title'
             :img='i.large_cover_image'
-            btnText='Удалить'
+            btnText='Delete from favorites'
             @buttonClick='deleteFavoriteFilm'
         />
     </div>
@@ -55,7 +55,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: rgb(89, 89, 89);
-    border-radius: 10px;
+    border-radius: 5px;
     grid-gap: 10px;
 }
 </style>

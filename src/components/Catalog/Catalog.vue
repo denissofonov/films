@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <div v-if='$store.state.films.loading'>Загрузка</div>
-        <div v-else-if='$store.state.films.error'>Ошибка</div>
+    <div class='catalog'>
+        <div class='loading' v-if='$store.state.films.loading'>Loading</div>
+        <div class='error' v-else-if='$store.state.films.error'>Error</div>
         <FilmsList v-else/>
         <Pagination />
     </div>
@@ -22,7 +22,7 @@ export default {
             loading: true
         }
     },
-     methods: {
+    methods: {
         fetchFilms() {
             this.$store.dispatch('films/FETCH_FILMS')
         }
@@ -34,5 +34,9 @@ export default {
 </script>
 
 <style>
-
+.catalog {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+}
 </style>
