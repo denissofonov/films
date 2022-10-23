@@ -8,11 +8,14 @@
             :rating='film.rating'
             :year='film.year'
             :img='film.large_cover_image'
-            :genres='genres(film.genres)'
-            :btnText='buttonValue(film.id)'
-            :btn='"btnGreen"'
-            @buttonClick='setFavoriteFilm'
-        />
+            :genres='film.genres'
+        >
+            <template #button>
+                <el-button class="btnGreen" @click='setFavoriteFilm(film.id)' type='success'>
+                    {{ buttonValue(film.id) }}
+                </el-button>
+            </template>
+        </Film>
     </div>
 </template>
 
@@ -32,14 +35,6 @@ export default {
         setFavoriteFilm(id) {
             if(!this.$store.state.favoriteFilms.favoriteFilmsIds.includes(id)) {
                 this.$store.commit('favoriteFilms/SET_FAVORITE_FILM_ID', id)
-            }
-        },
-        genres(genres) {
-            if(genres) {
-                let arr = genres.join(', ')
-                return arr
-            } else {
-                return 'Genre missing'
             }
         },
         buttonValue(id) {
@@ -85,16 +80,7 @@ export default {
     font-weight:700;
     padding: 5px;
 }
-.genres {
-    padding: 5px;
-}
-.year {
-    padding: 5px;
-}
-.rating {
-    padding: 5px;        
-    }
-.button {
+.genres, .year, .rating, .button {
     padding: 5px;
 }
 </style>

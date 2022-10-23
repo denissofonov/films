@@ -1,15 +1,21 @@
 <template>
     <div class="films">
         <Film 
-            v-for='i in allFavoriteFilms' 
-            :key='i.id' 
-            :id='i.id'
-            :title='i.title'
-            :img='i.large_cover_image'
-            btnText='Delete from favorites'
-            @buttonClick='deleteFavoriteFilm'
-            :btn='"btnRed"'
-        />
+            v-for='film in allFavoriteFilms' 
+            :key='film.id' 
+            :id='film.id'
+            :title='film.title'
+            :year='film.year'
+            :rating='film.rating'
+            :genres='film.genres'
+            :img='film.large_cover_image'
+        >
+            <template #button>
+                <el-button @click='deleteFavoriteFilm(film.id)' type='danger'>
+                   Delete from favorites
+                </el-button>
+            </template>
+        </Film>
     </div>
 </template>
 
@@ -60,5 +66,8 @@ export default {
     border-radius: 5px;
     grid-gap: 10px;
     height: 100vh;
+}
+.btnRed {
+    font-size: 16px;
 }
 </style>
