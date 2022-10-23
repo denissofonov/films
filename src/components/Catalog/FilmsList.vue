@@ -38,7 +38,6 @@ export default {
             if(genres) {
                 let arr = genres.join(', ')
                 return arr
-                // return genres[0]
             } else {
                 return 'Genre missing'
             }
