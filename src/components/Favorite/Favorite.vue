@@ -1,5 +1,5 @@
 <template>
-    <div class="film">
+    <div class="films">
         <Film 
             v-for='i in allFavoriteFilms' 
             :key='i.id' 
@@ -8,6 +8,7 @@
             :img='i.large_cover_image'
             btnText='Delete from favorites'
             @buttonClick='deleteFavoriteFilm'
+            :btn='"btnRed"'
         />
     </div>
 </template>
@@ -50,12 +51,14 @@ export default {
 }
 </script>
 
-<style>
-.film {
+<style scoped>
+.films {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
     background-color: rgb(89, 89, 89);
     border-radius: 5px;
     grid-gap: 10px;
+    height: 100vh;
 }
 </style>

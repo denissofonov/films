@@ -1,15 +1,20 @@
 <template>
     <div class='buttons'>
-        <router-link class='button' to='/'>Home</router-link>
-        <router-link class='button' to='/catalog'>Catalog</router-link>
-        <router-link class='button' to='/favorite'>Favorites</router-link>
-        <el-button plain>Plain</el-button>
+        <el-button type='' text>
+            <router-link class='button' to='/'>Home</router-link>
+        </el-button>
+        <el-button type='' text>
+            <router-link class='button' to='/catalog'>Catalog</router-link>
+        </el-button>
+        <el-button type='' text>
+            <router-link class='button' to='/favorite'>Favorites</router-link>
+        </el-button>
     </div>
-</template>
-
+    </template>
 <script>
+
 export default {
-    Name: 'Nav',
+    Name: 'Nav'
 }
 </script>
 
@@ -17,12 +22,14 @@ export default {
 .buttons {
     padding: 15px;
     margin: 0 auto;
-    width: 200px;
+    width: 100vh;
     gap: 20px;
     display: flex;
 }
 .button {
-    color: aliceblue;
+    color:rgb(60, 59, 59);
+    font-size: 16px;
+
 }
 
 </style>

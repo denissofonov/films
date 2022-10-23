@@ -3,7 +3,7 @@ import apiFilms from '@/api/films'
 export default {
     state: {
         films: [],
-        limit: 10,
+        limit: 15,
         page: 1,
         filmsCount: null,
         loading: true,
@@ -21,6 +21,9 @@ export default {
         },
         SET_LOADING(state, loadingValue) {
             state.loading = loadingValue
+        },
+        SET_LIMIT(state, limit) {
+            state.limit = limit
         },
         ACTIVATE_ERROR(state) {
             state.error = true

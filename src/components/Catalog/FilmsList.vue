@@ -8,8 +8,9 @@
             :rating='film.rating'
             :year='film.year'
             :img='film.large_cover_image'
-            :genres='film.genres[0]'
+            :genres='genres(film.genres)'
             :btnText='buttonValue(film.id)'
+            :btn='"btnGreen"'
             @buttonClick='setFavoriteFilm'
         />
     </div>
@@ -31,6 +32,15 @@ export default {
         setFavoriteFilm(id) {
             if(!this.$store.state.favoriteFilms.favoriteFilmsIds.includes(id)) {
                 this.$store.commit('favoriteFilms/SET_FAVORITE_FILM_ID', id)
+            }
+        },
+        genres(genres) {
+            if(genres) {
+                let arr = genres.join(', ')
+                return arr
+                // return genres[0]
+            } else {
+                return 'Genre missing'
             }
         },
         buttonValue(id) {
@@ -68,10 +78,11 @@ export default {
 .information {
     padding: 5px 0 0 0;
     display: grid;
-    grid-template-rows: 50px 30px 30px 30px 30px;
+    grid-template-rows: 60px 50px 30px 30px 30px;
     color: aliceblue;
 }
 .title {
+    font-size: 20px;
     font-weight:700;
     padding: 5px;
 }

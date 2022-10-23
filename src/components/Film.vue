@@ -7,7 +7,9 @@
             <div class='year'>Year: {{ year }}</div>
             <div class='rating'>Rating: {{ rating }}</div>
             <div class='button'>
-                <button class='btn' @click='buttonClick(id)'>{{ btnText }}</button>
+                <el-button type='' link>
+                    <button :class='btn' @click='buttonClick(id)'>{{ btnText }}</button>
+                </el-button>
             </div>
         </div>
     </div>
@@ -22,7 +24,8 @@ export default {
         img: String,
         year: Number,
         id: Number,
-        btnText: String
+        btnText: String,
+        btn: String
     },
     methods: {
         buttonClick(id) {
@@ -32,4 +35,15 @@ export default {
 }
 </script>
 <style scoped>
+.buttons {
+    font-size: 10px;
+}
+.btnGreen {
+    font-size: 16px;
+    color: rgb(0, 255, 110);
+}
+.btnRed {
+    font-size: 16px;
+    color: rgb(199, 47, 47);
+}
 </style>
