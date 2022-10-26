@@ -53,14 +53,10 @@ export default {
     }
 }
 </script>
-<style scoped>
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 50px 0 20px 0;
-}
-.button_active {
-    color: blueviolet;
-}
+<style lang='sass' scoped>
+.buttons
+    display: flex
+    gap: 20px
+    justify-content: center
+    margin: 30px 0
 </style>

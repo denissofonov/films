@@ -46,7 +46,7 @@ export default {
         }
     },
     getters: {
-        ALL_FILMS(state) {
+        GET_ALL_FILMS(state) {
             return state.films
         },
         GET_PAGE_COUNT(state) {

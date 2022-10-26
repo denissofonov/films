@@ -1,35 +1,29 @@
 <template>
-    <div class='buttons'>
-        <el-button type='' text>
-            <router-link class='button' to='/'>Home</router-link>
-        </el-button>
-        <el-button type='' text>
-            <router-link class='button' to='/catalog'>Catalog</router-link>
-        </el-button>
-        <el-button type='' text>
-            <router-link class='button' to='/favorite'>Favorites</router-link>
-        </el-button>
-    </div>
-    </template>
-<script>
+    <nav class='nav'>
+            <router-link class='button' to='/'>
+                <el-button class='el-button' type='' link >Home</el-button>
+            </router-link>
+            <router-link class='button' to='/catalog'>
+                <el-button class='el-button' type='' link>Catalog</el-button>
+            </router-link>
+            <router-link class='button' to='/favorite'>
+                <el-button class='el-button' type='' link>Favorites</el-button>
+            </router-link>
+            <router-link class='button' to='/login'>
+                <el-button class='el-button' type='' link>Login</el-button>
+            </router-link>
+    </nav>
+</template>
 
+<script>
 export default {
     Name: 'Nav'
 }
 </script>
 
-<style>
-.buttons {
-    padding: 15px;
-    margin: 0 auto;
-    width: 100vh;
-    gap: 20px;
-    display: flex;
-}
-.button {
-    color:rgb(60, 59, 59);
-    font-size: 16px;
-
-}
-
+<style lang='sass' scoped>
+.button:not(:last-child)
+    margin: 0 25px 0 0
+.el-button
+    font-size: 16px
 </style>

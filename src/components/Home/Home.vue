@@ -1,6 +1,5 @@
 <template>
-    <div>
-
+    <div class='home'>
     </div>
 </template>
 
@@ -10,6 +9,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang='sass' scoped>
+.home
+    height: 100vh
 </style>

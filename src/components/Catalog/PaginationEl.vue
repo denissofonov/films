@@ -1,12 +1,16 @@
 <template>
-    <el-pagination 
-    layout='prev, pager, next, jumper' 
-    :page-size='pageSize' 
-    :total='filmsCount' 
-    v-model:current-page='currentPage'
+    <div>
+        <el-pagination
+        class='el-pagination'
+        id='el-pagination'
+        layout='prev, pager, next' 
+        :page-size='pageSize' 
+        :total='filmsCount' 
+        v-model:current-page='currentPage'
     />
+    </div>
 </template>
-<script>
+<script> 
 export default {
     name: 'PaginationEl',
     computed: {
@@ -28,3 +32,21 @@ export default {
     }
 }
 </script>
+<style lang='sass'>
+div.el-pagination
+    display: flex
+    justify-content: center
+    padding: 0 0 30px 0
+    .el-pager li, .btn-next, .btn-prev
+        background-color: transparent !important
+        color: white
+        font-size: 16px
+    .el-pager 
+        .more, .btn-quickprev, .el-icon
+            color: white
+    .btn-next, .is-last, .btn-prev, .is-first
+        color: white !important
+    
+    
+
+</style>

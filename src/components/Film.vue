@@ -2,7 +2,7 @@
     <div class='film'>   
         <img class='img' :src='img' alt=''>
         <div class='information'>
-            <div class='title'>{{ title }}</div>
+            <div class='title' @click='titleClick'>{{ title }}</div>
             <div class='genres'>Genres: {{ getGenres }}</div>
             <div class='year'>Year: {{ year }}</div>
             <div class='rating'>Rating: {{ rating }}</div>
@@ -32,11 +32,28 @@ export default {
             }
             return 'Genre missing'
         }
+    },
+    methods: {
+        titleClick() {
+            this.$router.push({path:`/catalog/${this.id}`})
+        }
     }
 }
 </script>
-<style scoped>
-.buttons {
-    font-size: 10px;
-}
+<style lang='sass' scoped>
+.film
+    display: grid
+    grid-template-columns: 140px 200px
+    grid-gap: 10px
+    .img 
+        border-radius: 10px
+    .information
+        font-size: 14px
+        color: white
+        padding: 5px
+        .title
+            cursor: pointer
+            font-size: 16px
+        .title, .genres, .year, .rating
+            margin: 0 0 10px 0
 </style>

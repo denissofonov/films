@@ -11,7 +11,7 @@
             :genres='film.genres'
         >
             <template #button>
-                <el-button class="btnGreen" @click='setFavoriteFilm(film.id)' type='success'>
+                <el-button class="btnGreen" @click='setFavoriteFilm(film.id)' type='success' link>
                     {{ buttonValue(film.id) }}
                 </el-button>
             </template>
@@ -21,14 +21,14 @@
 
 <script>
 import Film from '@/components/Film.vue'
-export default {    
+export default {
     name: 'Items',
     components: {
         Film
     },
     computed: {
         allFilms() {
-            return this.$store.getters['films/ALL_FILMS']
+            return this.$store.getters['films/GET_ALL_FILMS']
         }
     },
     methods: {
@@ -36,6 +36,7 @@ export default {
             if(!this.$store.state.favoriteFilms.favoriteFilmsIds.includes(id)) {
                 this.$store.commit('favoriteFilms/SET_FAVORITE_FILM_ID', id)
             }
+            this.$store.commit('favoriteFilms/DELETE_FAVORITE_FILM_ID', id)
         },
         buttonValue(id) {
             if(this.$store.state.favoriteFilms.favoriteFilmsIds.includes(id)) {
@@ -47,40 +48,11 @@ export default {
 }
 </script>
 
-<style>
-.films {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    margin: 0 auto;
-    width: 100%;
-}
-.film {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: rgb(100, 79, 79);
-    grid-gap: 10px;
-    height: 300px;
-    width: 400px;
-    margin: 0 auto;
-}
-.img {
-    border-radius: 5px;
-    height: 100%;
-    padding: 5px;
-}
-.information {
-    padding: 5px 0 0 0;
-    display: grid;
-    grid-template-rows: 60px 50px 30px 30px 30px;
-    color: aliceblue;
-}
-.title {
-    font-size: 20px;
-    font-weight:700;
-    padding: 5px;
-}
-.genres, .year, .rating, .button {
-    padding: 5px;
-}
+<style lang='sass' scoped>
+.films 
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    width: 1100px
+    margin: 0 auto
+    gap: 40px
 </style>

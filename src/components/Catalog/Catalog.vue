@@ -1,14 +1,17 @@
 <template>
     <div class='catalog'>
-        <div class='pageLimit'>
-            <div>Show by:</div>
-            <button v-for='page in pages' :key='page' @click='setLimit(page)'>{{ page }}</button>
+        <div class='page-limit'>
+            <div class='text'>Show by:</div>
+            <el-button type='' link v-for='page in pages' :key='page' @click='setLimit(page)'>
+                {{ page }}
+            </el-button>
+            
         </div>
         <div class='loading' v-if='$store.state.films.loading'>Loading</div>
         <div class='error' v-else-if='$store.state.films.error'>Error</div>
         <FilmsList v-else/>
-        <PaginationEl/>
         <Pagination />
+        <PaginationEl/>
     </div>
 </template>
 
@@ -27,7 +30,7 @@ export default {
         return {
             error: false,
             loading: true,
-            pages: [15, 24, 28]
+            pages: [10, 20, 30]
         }
     },
     computed: {
@@ -54,10 +57,20 @@ export default {
 }
 </script>
 
-<style>
-.catalog {
-    width: 90%;
-    margin: 0 auto;
-    padding: 30px;
-}
+<style lang='sass' scoped>
+.catalog
+    margin: 0 auto
+    font-family: Archivo
+    min-height: 100vh
+    .page-limit
+        display: flex
+        align-items: center
+        font-size: 14px
+        color: #606266
+        margin: 0 0 20px 0
+        padding: 0 0 0 50px
+        font-size: 14px
+        .text
+            margin-right: 12px
+        .button:not(:last-child)
 </style>

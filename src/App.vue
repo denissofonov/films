@@ -16,9 +16,15 @@ export default {
 }
 </script>
 
-<style>
-@import '/src/assets/style/reset.css';
-.app {
-  background: rgb(110, 110, 110);
-}
+<style lang='sass'>
+@import '/src/assets/style/reset.css'
+@font-face 
+  font-family: Archivo
+  src: url(@/fonts/archivo/Archivo-Regular.ttf)
+
+.app
+  background: black
+  font-family: Archivo
+  color: #EFEFEF
+body
 </style>

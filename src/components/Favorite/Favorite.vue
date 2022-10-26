@@ -11,7 +11,7 @@
             :img='film.large_cover_image'
         >
             <template #button>
-                <el-button @click='deleteFavoriteFilm(film.id)' type='danger'>
+                <el-button @click='deleteFavoriteFilm(film.id)' type='danger' link>
                    Delete from favorites
                 </el-button>
             </template>
@@ -34,9 +34,9 @@ export default {
         fetchSetFilm() {
             this.allFavoriteFilmsIds.forEach((i) => {
                 this.$store.dispatch('favoriteFilms/FETCH_FAVORITE_FILM', i)
-            .then((response) => {
-                this.$store.commit('favoriteFilms/SET_FAVORITE_FILM', response.data.data.movie)
-            })
+                    .then((response) => {
+                        this.$store.commit('favoriteFilms/SET_FAVORITE_FILM', response.data.data.movie)
+                    })
         })
         }
     },
@@ -57,17 +57,13 @@ export default {
 }
 </script>
 
-<style scoped>
-.films {
-    display: grid;
-    width: 90%;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: rgb(89, 89, 89);
-    border-radius: 5px;
-    grid-gap: 10px;
-    height: 100vh;
-}
-.btnRed {
-    font-size: 16px;
-}
+<style lang='sass' scoped>
+.films
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    width: 1100px
+    margin: 0 auto
+    gap: 40px
+    min-height: 100vh
+    background-color: #black
 </style>
