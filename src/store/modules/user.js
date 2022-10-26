@@ -9,8 +9,8 @@ export default {
         SET_ACCESS(state, access) {
             state.isAccess = access
         },
-        SET_ERROR_VALUE(state) {
-            state.error = true
+        SET_ERROR_VALUE(state, error) {
+            state.error = error
         }
     },
     actions: {
@@ -20,7 +20,7 @@ export default {
                     context.commit('SET_ACCESS', response.success)
                 })
                 .catch((error) => {
-                    context.commit('SET_ERROR_VALUE')
+                    context.commit('SET_ERROR_VALUE', error.msg)
                     throw error
                 })
         }

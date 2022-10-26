@@ -33,7 +33,14 @@ export default createRouter ({
         },
         {
             path: '/login',
-            component: Login
+            component: Login,
+            // beforeEnter(to, from, next) {
+            //     if (!store.getters['user/GET_ACCESS']) {
+            //         next()
+            //     } else {
+            //         return
+            //     }
+            // }
         }
     ]
 })

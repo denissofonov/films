@@ -6,10 +6,10 @@
             <router-link class='button' to='/catalog'>
                 <el-button class='el-button' type='' link>Catalog</el-button>
             </router-link>
-            <router-link class='button' to='/favorite'>
+            <router-link v-if='getAccess' class='button' to='/favorite'>
                 <el-button class='el-button' type='' link>Favorites</el-button>
             </router-link>
-            <router-link class='button' to='/login'>
+            <router-link v-else class='button' to='/login'>
                 <el-button class='el-button' type='' link>Login</el-button>
             </router-link>
     </nav>
@@ -17,7 +17,12 @@
 
 <script>
 export default {
-    Name: 'Nav'
+    Name: 'Nav',
+    computed: {
+        getAccess() {
+            return this.$store.getters['user/GET_ACCESS']
+        }
+    }
 }
 </script>
 
