@@ -21,11 +21,14 @@
 
 <script>
 import Film from '@/components/Film.vue'
+
 export default {
     name: 'Favorite',
+
     components: {
         Film
     },
+
     methods: {
         deleteFavoriteFilm(id) {
             this.$store.commit('favoriteFilms/DELETE_FAVORITE_ID', id)
@@ -37,9 +40,10 @@ export default {
                     .then((response) => {
                         this.$store.commit('favoriteFilms/SET_FAVORITE_FILM', response.data.data.movie)
                     })
-        })
+            })
         }
     },
+
     computed: {
         allFavoriteFilmsIds() {
             return this.$store.getters['favoriteFilms/ALL_FAVORITE_FILMS_IDS']
@@ -48,9 +52,11 @@ export default {
             return this.$store.getters['favoriteFilms/ALL_FAVORITE_FILM']
         }
     },
+
     mounted() {
         this.fetchSetFilm()
     },
+    
     unmounted() {
         this.$store.commit('favoriteFilms/RESET_FAVORITE_FILMS')
     }

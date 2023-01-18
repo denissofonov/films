@@ -5,9 +5,11 @@ export default {
         favoriteFilmsIds: [],
         favoriteFilms: []
     },
+
     mutations: {
         SET_FAVORITE_FILM_ID(state, id) {
             state.favoriteFilmsIds.push(id)
+            return true
         },
         SET_FAVORITE_FILM(state, film) {
             state.favoriteFilms.push(film)
@@ -24,11 +26,19 @@ export default {
             state.favoriteFilms = arr
         }
     },
+
     actions: {
         FETCH_FAVORITE_FILM(context, id) {
             return apiFavoriteFilms.getFilmById(id)
+        },
+        SET_FAVORITE_FILM_ID(context, id) {      
+            id = Number(id)
+            if(!context.state.favoriteFilmsIds.includes(id)) {
+                context.commit('SET_FAVORITE_FILM_ID', id)
+            }
         }
     },
+
     getters: {
         ALL_FAVORITE_FILMS_IDS(state) {
             return state.favoriteFilmsIds
@@ -37,5 +47,6 @@ export default {
             return state.favoriteFilms
         }
     },
+    
     namespaced: true
 }

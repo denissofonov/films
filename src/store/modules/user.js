@@ -5,6 +5,7 @@ export default {
         isAccess: false,
         error: false
     },
+
     mutations: {
         SET_ACCESS(state, access) {
             state.isAccess = access
@@ -13,6 +14,7 @@ export default {
             state.error = error
         }
     },
+
     actions: {
         LOGIN(context, data) {
             return api.login(data.login, data.password)
@@ -25,6 +27,7 @@ export default {
                 })
         }
     },
+    
     getters: {
         GET_ACCESS(state) {
             return state.isAccess

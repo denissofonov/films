@@ -11,7 +11,7 @@
             :genres='film.genres'
         >
             <template #button>
-                <el-button class="btnGreen" @click='setFavoriteFilm(film.id)' type='success' link>
+                <el-button v-if='this.$store.state.user.isAccess' @click='setFavoriteFilm(film.id)' type='success' link>
                     {{ buttonValue(film.id) }}
                 </el-button>
             </template>
@@ -21,22 +21,17 @@
 
 <script>
 import Film from '@/components/Film.vue'
+
 export default {
     name: 'Items',
+
     components: {
         Film
     },
-    computed: {
-        allFilms() {
-            return this.$store.getters['films/GET_ALL_FILMS']
-        }
-    },
+
     methods: {
         setFavoriteFilm(id) {
-            if(!this.$store.state.favoriteFilms.favoriteFilmsIds.includes(id)) {
-                this.$store.commit('favoriteFilms/SET_FAVORITE_FILM_ID', id)
-            }
-            this.$store.commit('favoriteFilms/DELETE_FAVORITE_FILM_ID', id)
+            this.$store.dispatch('favoriteFilms/SET_FAVORITE_FILM_ID', id)
         },
         buttonValue(id) {
             if(this.$store.state.favoriteFilms.favoriteFilmsIds.includes(id)) {
@@ -44,15 +39,22 @@ export default {
             }
             return 'Add to favorites'
         }
+    },
+
+    computed: {
+        allFilms() {
+            return this.$store.getters['films/GET_ALL_FILMS']
+        }
     }
 }
 </script>
 
 <style lang='sass' scoped>
-.films 
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr
-    width: 1100px
-    margin: 0 auto
-    gap: 40px
+.films
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    gap: 30px
+    margin: 0 100px
 </style>

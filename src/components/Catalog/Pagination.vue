@@ -10,14 +10,17 @@
         </button>
     </div>
 </template>
+
 <script>
 export default {
     name: 'Pagination',
+
     methods: {
         setCurrentPage(page) {
             this.$store.commit('films/SET_CURRENT_PAGE', page)
         }
     },
+
     computed: {
         pageCount() {
             const pages = [];
@@ -46,6 +49,7 @@ export default {
             return this.$store.state.films.page
         }
     },
+
     watch: {
         currentPage() {
             this.$store.dispatch('films/FETCH_FILMS')
@@ -53,10 +57,12 @@ export default {
     }
 }
 </script>
+
 <style lang='sass' scoped>
 .buttons
     display: flex
     gap: 20px
     justify-content: center
-    margin: 30px 0
+    padding: 50px 0
+    color: grey
 </style>

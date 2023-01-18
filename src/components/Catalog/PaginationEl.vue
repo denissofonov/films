@@ -1,18 +1,20 @@
 <template>
     <div>
         <el-pagination
-        class='el-pagination'
-        id='el-pagination'
-        layout='prev, pager, next' 
-        :page-size='pageSize' 
-        :total='filmsCount' 
-        v-model:current-page='currentPage'
-    />
+            class='el-pagination'
+            id='el-pagination'
+            layout='prev, pager, next' 
+            :page-size='pageSize' 
+            :total='filmsCount' 
+            v-model:current-page='currentPage'
+        />
     </div>
 </template>
+
 <script> 
 export default {
     name: 'PaginationEl',
+
     computed: {
         currentPage: {
             get() {
@@ -21,6 +23,10 @@ export default {
             set(value) {
                 this.$store.commit('films/SET_CURRENT_PAGE', value)
                 this.$store.dispatch('films/FETCH_FILMS')
+                window.scrollTo({
+                    top:0,
+                    behavior: 'instant'
+                    })
             }
         },
         filmsCount() {
@@ -32,6 +38,7 @@ export default {
     }
 }
 </script>
+
 <style lang='sass'>
 div.el-pagination
     display: flex

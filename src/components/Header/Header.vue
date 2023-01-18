@@ -18,19 +18,37 @@ export default {
 
 <style lang='sass'>
     .header
-        display: grid
-        grid-template-columns: minmax(50px, auto) 1fr
-        grid-template-rows: 65px
-        align-self: center
+        display: flex
+        align-items: center
+        position: fixed
+        background-color: black
+        width: 1100px
+        padding: 15px 0 0 0
         .logo
             color: white
-            font-size: 26px
+            font-size: 36px
             display: flex
             align-items: center
             width: 300px
-            padding: 0 0 0 50px
+            padding: 0 0 0 20px
             height: auto
+            color: brown
         .nav
             display: flex
             align-items: center
+@media (max-width: 1200px) 
+    .header
+        width: 1000px
+@media (max-width: 1050px) 
+    .header
+        width: 900px
+@media (max-width: 900px) 
+    .header
+        width: 700px
+@media (max-width: 700px) 
+    .header
+        width: 400px
+@media (max-width: 450px) 
+    .header
+        width: 350px
 </style>

@@ -9,6 +9,7 @@ export default {
         loading: true,
         error: false
     },
+
     mutations: {
         UPDATE_FILMS(state, films) {
             state.films = films
@@ -29,6 +30,7 @@ export default {
             state.error = true
         }
     },
+
     actions: {
         FETCH_FILMS(context) {
             context.commit('SET_LOADING', true)
@@ -45,6 +47,7 @@ export default {
                 })
         }
     },
+
     getters: {
         GET_ALL_FILMS(state) {
             return state.films
@@ -54,5 +57,6 @@ export default {
             return pageCount
         }
     },
+    
     namespaced: true
 }

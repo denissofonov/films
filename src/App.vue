@@ -1,7 +1,9 @@
 <template>
   <div class='app'>
     <Header />
-    <router-view />
+    <div class='router'>
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -10,6 +12,7 @@ import Header from '@/components/Header/Header.vue'
 
 export default {
   name: 'App',
+
   components: {
     Header,
   }
@@ -20,11 +23,13 @@ export default {
 @import '/src/assets/style/reset.css'
 @font-face 
   font-family: Archivo
-  src: url(@/fonts/archivo/Archivo-Regular.ttf)
-
+  // src: url(@/fonts/archivo/Archivo-Regular.ttf)
 .app
   background: black
   font-family: Archivo
-  color: #EFEFEF
+  display: flex
+  justify-content: center
+  .router
+    margin-top: 95px
 body
 </style>
