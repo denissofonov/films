@@ -63,6 +63,8 @@ export default {
     display: flex
     gap: 20px
     justify-content: center
+    align-items: center
+    margin: 0 auto
     padding: 50px 0
     color: grey
 </style>

@@ -67,6 +67,7 @@ export default {
         align-items: center
         padding: 0 0 15px 0
         gap: 10px
+        margin: 0 auto
         .text
         padding: 0 0 15px 0
 </style>
