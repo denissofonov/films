@@ -1,7 +1,7 @@
 <template>
     <div class='catalog'>
-        <div class='page-limit'>
-            <div class='text'>Show by:</div>
+        <div class='catalog__page-limit'>
+            <div>Show by:</div>
             <button type='' link v-for='page in pages' :key='page' @click='setLimit(page)'>{{ page }}</button>
         </div>
         <div>
@@ -60,7 +60,7 @@ export default {
     flex-direction: row
     flex-wrap: wrap
     gap: 15px
-    .page-limit
+    &__page-limit
         display: flex
         color: grey
         justify-content: center
@@ -68,6 +68,4 @@ export default {
         padding: 0 0 15px 0
         gap: 10px
         margin: 0 auto
-        .text
-        padding: 0 0 15px 0
 </style>

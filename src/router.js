@@ -4,7 +4,6 @@ import Catalog from '@/views/CatalogView.vue';
 import Favorite from '@/views/FavoriteView.vue';
 import FilmDetails from '@/views/FilmDetailsView.vue';
 import Login from '@/views/LoginView.vue';
-import Registration from '@/views/RegistrationView.vue';
 import store from '@/store/index.js'
 
 export default createRouter ({
@@ -47,9 +46,5 @@ export default createRouter ({
                 }
             }
         },
-        {
-            path: '/registration',
-            component: Registration
-        }
     ]
 })

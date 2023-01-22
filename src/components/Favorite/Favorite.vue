@@ -1,5 +1,5 @@
 <template>
-    <div class="films">
+    <div class='films'>
         <Film 
             v-for='film in allFavoriteFilms' 
             :key='film.id' 

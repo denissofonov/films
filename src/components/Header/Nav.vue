@@ -1,23 +1,23 @@
 <template>
     <nav class='nav'>
-            <router-link class='button' to='/home'>
-                <el-button class='el-button' type='' link>Home</el-button>
+            <router-link class='nav__button' to='/home'>
+                <el-button class='nav__el-button' type='' link>Home</el-button>
             </router-link>
-            <router-link class='button' to='/catalog'>
-                <el-button class='el-button' type='' link>Catalog</el-button>
+            <router-link class='nav__button' to='/catalog'>
+                <el-button class='nav__el-button' type='' link>Catalog</el-button>
             </router-link>
-            <router-link v-if='getAccess' class='button' to='/favorite'>
+            <router-link v-if='getAccess' class='nav__button' to='/favorite'>
                 <el-button 
                     @drop='onDrop' 
-                    class='el-button' 
+                    class='nav__el-button' 
                     type='' 
                     link
                     @dragover.prevent
                     @dragenter.prevent
                 >Favorites</el-button>
             </router-link>
-            <router-link v-else class='button' to='/login'>
-                <el-button class='el-button' type='' link>Login</el-button>
+            <router-link v-else class='nav__button' to='/login'>
+                <el-button class='nav__el-button' type='' link>Login</el-button>
             </router-link>
             <div v-if='getAccess'>
                 <el-popconfirm 
@@ -26,14 +26,15 @@
                     :hide-icon='true'
                     confirm-button-type='success'
                     cancel-button-type='info'
-                    class='popconfirm'
+                    class='nav__popconfirm'
                     >
                     <template #reference>
                         <el-button 
-                            class='el-button logout' 
+                            class='nav__el-button nav__logout' 
                             type='' 
                             link
-                            >Logout
+                        >
+                            Logout
                         </el-button>
                 </template>
             </el-popconfirm>
@@ -66,10 +67,10 @@ export default {
 <style lang='sass' scoped>
 .nav
     display: flex
-.button:not(:last-child)
-    margin: 0 25px 0 0
-.el-button
-    font-size: 16px
-.popconfirm
-    background-color: grey !important
+    &__button:not(:last-child)
+        margin: 0 25px 0 0
+    &__el-button
+        font-size: 16px
+    &__popconfirm
+        background-color: grey !important
 </style>

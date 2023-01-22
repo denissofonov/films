@@ -1,19 +1,19 @@
 <template>
     <div class='film'>   
-        <img class='img' :src='img' alt='' @click='dialogVisible = true'>
-        <div class='information'>
+        <img class='film__img' :src='img' alt='' @click='dialogVisible = true'>
+        <div class='film__information'>
             <div 
-                class='title' 
+                class='film__title' 
                 @click='titleClick'
                 @dragstart='onDragStar($event, id)'
                 draggable='true'
                 >
                 {{ title }}
             </div>
-            <div class='genres'>Genres: {{ getGenres }}</div>
-            <div class='year'>Year: {{ year }}</div>
-            <div class='rating'>Rating: {{ rating }}</div>
-            <div class='button'>
+            <div class='film__genres'>Genres: {{ getGenres }}</div>
+            <div class='film__year'>Year: {{ year }}</div>
+            <div class='film__rating'>Rating: {{ rating }}</div>
+            <div class='film__button'>
                 <slot name='button'/>
             </div>
         </div>
@@ -25,7 +25,7 @@
             :center="true" 
             :lock-scroll="false"
             >
-            <img class='img' :src='img' alt=''>
+            <img class='film__img' :src='img' alt=''>
         </el-dialog>
     </div>
 </template>
@@ -78,9 +78,9 @@ export default {
     gap: 20px
     width: 350px
     height: 250px
-    .img 
+    &__img 
         border-radius: 10px
-    .information
+    &__information
         display: flex
         flex-direction: column
         gap: 20px

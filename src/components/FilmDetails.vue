@@ -1,14 +1,14 @@
 <template>
-    <div class='film-details'>
-        <img class='img' :src='film.large_cover_image'/>
-        <div class='information' ref='bg'>
-            <div class='title'>{{film.title}}</div>
-            <div class='slug'>Slug: {{film.slug}}</div>
-            <div class='year'>Year: {{film.year}}</div>
-            <div class='rating'>Rating: {{film.rating}}</div>
-            <div class='runtime'>Runtime: {{film.runtime}}</div>
-            <div class='genres'>Genres: {{getGenres}}</div>
-            <div class='description'>{{film.description_full}}</div>
+    <div class='details'>
+        <img class='details__img' :src='film.large_cover_image'/>
+        <div class='details__information' ref='bg'>
+            <div class='details__title'>{{film.title}}</div>
+            <div class='details__slug'>Slug: {{film.slug}}</div>
+            <div class='details__year'>Year: {{film.year}}</div>
+            <div class='details__rating'>Rating: {{film.rating}}</div>
+            <div class='details__runtime'>Runtime: {{film.runtime}}</div>
+            <div class='details__genres'>Genres: {{getGenres}}</div>
+            <div class='details__description'>{{film.description_full}}</div>
         </div>
         <div @click='setDeleteFavoriteFilm()'>{{ buttonValue }}</div>
     </div>
@@ -60,7 +60,7 @@ export default {
 }
 </script>
 <style lang='sass' scoped>
-.film-details
+.details
     min-height: 100vh
     display: grid
     margin: 0 auto
@@ -69,15 +69,15 @@ export default {
     width: 1400px
     color: #FFFAF0
     padding: 50px
-    .img
+    &__img
         border-radius: 10px
-    .information
+    &__information
         display: flex
         flex-direction: column
         grid-gap: 20px
         border-radius: 10px
         height: 500px
         padding: 30px 0 0 25px
-        .title
-            font-size: 24px
+    &__title
+        font-size: 24px
 </style>

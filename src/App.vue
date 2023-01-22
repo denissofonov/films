@@ -23,7 +23,6 @@ export default {
 @import '/src/assets/style/reset.css'
 @font-face 
   font-family: Archivo
-  // src: url(@/fonts/archivo/Archivo-Regular.ttf)
 .app
   background: black
   font-family: Archivo

@@ -1,7 +1,7 @@
 <template>
     <div class='header'>
-        <div class='logo'><h1>LOGO</h1></div>
-        <Nav class='nav'/>
+        <div class='header__logo'><h1>LOGO</h1></div>
+        <Nav class='header__nav'/>
     </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
         background-color: black
         width: 1100px
         padding: 15px 0 0 0
-        .logo
+        &__logo
             color: white
             font-size: 36px
             display: flex
@@ -33,7 +33,7 @@ export default {
             padding: 0 0 0 20px
             height: auto
             color: brown
-        .nav
+        &__nav
             display: flex
             align-items: center
 @media (max-width: 1200px) 
